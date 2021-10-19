@@ -7,9 +7,9 @@ createNF_GS.py : -o (output directory) -i (input directory) -t (template directo
 
 ## operation
 1. create directory 
-- AMF - {tmp} 
-      - {Model} 
-      - {Common} 
+- AMF - {tmp}   
+      - {Model}   
+      - {Common}   
       - {APIservices} - {apiservice}- {api, files}
 2. clean up {tmp} folder
 3. generate API coder per service at tmp folder
