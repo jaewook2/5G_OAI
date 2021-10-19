@@ -13,7 +13,7 @@ AMFConf.py
 class AMF_configure():
    def __init__(self):
       self.name = "AMF"
-      self.services ={'namfCommunication': 'TS29518_Namf_Communication.yaml','namfEventExposure' :TS29518_Namf_EventExposure.yaml, 'namfLocation': TS29518_Namf_Location.yaml, 'namfMT':TS29518_Namf_MT.yaml} 
+      self.services ={'namfCommunication': 'TS29518_Namf_Communication.yaml','namfEventExposure' : 'TS29518_Namf_EventExposure.yaml', 'namfLocation': 'TS29518_Namf_Location.yaml', 'namfMT':TS29518_Namf_MT.yaml} 
 
 ```
 
