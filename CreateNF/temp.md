@@ -7,31 +7,30 @@ common configure file + NF configure file +
    "createNFs" : {}
 }
 ```
-
+AMF.json
 ```
-   "NFs" : [
-   {
-    "name": "AMF",
-    "numServices" : 4,
-    "Services" : [
-        { 
-            "ServiceName" : 
-            "TSnumber" : 
-        }.
-        { 
-            "ServiceName" : 
-            "TSnumber" : 
-        }.
-        { 
-            "ServiceName" : 
-            "TSnumber" : 
-        }.
-        { 
-            "ServiceName" : 
-            "TSnumber" : 
-        }]
-    }]
+{
+ "name": "AMF",
+ "numServices" : 4,
+ "Services" : [
+     { 
+         "ServiceName" : 
+         "TSnumber" : 
+     },
+     { 
+         "ServiceName" : 
+         "TSnumber" : 
+     },
+     { 
+         "ServiceName" : 
+         "TSnumber" : 
+     },
+     { 
+         "ServiceName" : 
+         "TSnumber" : 
+     }]
 }
+
 '''
 
 
