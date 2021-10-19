@@ -25,7 +25,7 @@ def placementFiles(tempPath, serviceName, savedir):
     for fileName in file_list:
         print(fileName)
         if 'model_' in fileName:
-            savepath = savedir+"model/"
+            savepath =savedir+"model/"
         elif 'api_' in fileName or  'api.go' in fileName:
             savepath = savedir+serviceName+"/"
         elif fileName in ['routers.go', 'helpers.go', 'error.go', 'impl.go', 'logger.go']: 
@@ -59,39 +59,44 @@ for NF in createNFs:
     if nfName in file_list:
     	shutil.rmtree(basicPath+nfName)
     os.mkdir(basicPath+nfName) # create NFname folder
-    os.mkdir(basicPath+nfName+"/model")
-    os.mkdir(basicPath+nfName+"/common")
-    os.mkdir(basicPath+nfName+"/temp")
+    os.mkdir(basicPath+nfName+"/go") 
+    os.mkdir(basicPath+nfName+"/go/model")
+    os.mkdir(basicPath+nfName+"/go/common")
+    os.mkdir(basicPath+nfName+"/go/temp")
+
 
     for serviceName in NF.services.keys():
-        os.mkdir(basicPath+nfName+"/"+serviceName)
-        os.mkdir(basicPath+nfName+"/"+serviceName+"/api")
+        os.mkdir(basicPath+nfName+"/go/"+serviceName)
+        os.mkdir(basicPath+nfName+"/go/"+serviceName+"/api")
         
         
         
 # create serviceAPI
 for NF in createNFs:
     nfName = NF.name ##nf name
-    outputdir = basicPath+nfName+"/temp/"
+    outputdir = basicPath+nfName+"/go/temp/"
     
     # cleanUp temppath
-    file_list = os.listdir(basicPath+nfName)
+    file_list = os.listdir(basicPath+nfName+"/go")
     if "temp" in file_list:
     	shutil.rmtree(outputdir)
     os.mkdir(outputdir)
     
     
     for serviceName in NF.services.keys():
+        # Modify template file
+    
+        # 
         yamlfile = NF.services[serviceName] # yamlfile name
         ### openapi generator
         osParam = conf.os + " -i " + yamldir+yamlfile + " -o " + outputdir
         os.system(osParam)        
-        savedir = basicPath+nfName+"/"+serviceName+"/"
+        savedir = basicPath+nfName+"/go/"+serviceName+"/"
         
         postConfigured(outputdir,savedir, serviceName)
-        savedir = basicPath+nfName+"/"
+        savedir = basicPath+nfName+"/go/"
         placementFiles(outputdir, serviceName, savedir)
-        os.mkdir(outputdir)
+        shutil.rmtree(outputdir)
         
 
 

@@ -2,6 +2,7 @@
 package {{packageName}}
 {{#models}}{{#imports}}
 {{#-first}}import (
+	"importCommon"
 {{/-first}}	"{{import}}"{{#-last}}
 )
 {{/-last}}{{/imports}}{{#model}}{{#isEnum}}{{#description}}// {{{classname}}} : {{{description}}}{{/description}}
