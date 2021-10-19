@@ -1,3 +1,43 @@
+'''json
+{
+   "outputdir": ""
+   "templatedir" : ""
+   "yamldir": ""
+   "NFs" : [
+   {
+    "name": "AMF",
+    "numServices" : 4,
+    "Services" : [
+        { 
+            "ServiceName" : 
+            "TSnumber" : 
+        }.
+        { 
+            "ServiceName" : 
+            "TSnumber" : 
+        }.
+        { 
+            "ServiceName" : 
+            "TSnumber" : 
+        }.
+        { 
+            "ServiceName" : 
+            "TSnumber" : 
+        }]
+    }]
+}
+   
+   
+
+
+
+
+''''
+
+
+
+
+
 
 ```python
 import argparse
