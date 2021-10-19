@@ -1,0 +1,16 @@
+{{>partial_header}}
+package openapi
+
+import (
+	"github.com/gorilla/mux"	
+)
+
+func main(router *mux.Router) *mux.Router {
+{{#apiInfo}}{{#apis}}
+	{{classname}}Service := New{{classname}}Service()
+	{{classname}}Controller := New{{classname}}Controller({{classname}}Service)
+{{/apis}}{{/apiInfo}}
+	router = AddRouter(router, {{#apiInfo}}{{#apis}}{{classname}}Controller{{^-last}}, {{/-last}}{{/apis}}{{/apiInfo}})
+
+	return router
+}
