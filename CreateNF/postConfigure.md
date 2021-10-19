@@ -11,8 +11,8 @@ saveddir = outPath+"/"+NF+"/"+nickname+"/"
 
 
 ```python
-def postConfigured (filedir, savedir, nickname, filename = "main.go"):
-    savefilename = nickname+"router.go"
+def postConfigured (filedir, savedir, servicename, filename = "main.go"):
+    savefilename = servicename+"API.go"
 
     f = open(savedir+savefilename, 'w')
     f.close()
@@ -23,8 +23,9 @@ def postConfigured (filedir, savedir, nickname, filename = "main.go"):
     fout = open(savedir+savefile, "wt")
 
     for line in fin:
-        fout.write(line.replace('main', nickname+"router"))
+        fout.write(line.replace('main', servicename+"Router"))
 
     fin.close()
     fout.close()
+
 ```
