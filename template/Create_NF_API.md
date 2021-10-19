@@ -1,11 +1,11 @@
 # Create NF API server
-- python function
+##  python function
 createNF_GS.py : -o (output directory) -i (input directory) -t (template directory) -c (configuration file)
 
 - configuration file ==> json?
 { amf / service (nick_name / TSname) }
 
-- operation
+## operation
 1. create directory 
 - AMF - {tmp} 
       - {Model} 
