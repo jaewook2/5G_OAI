@@ -1,8 +1,14 @@
-'''
+common configure file + NF configure file + 
+```
 {
    "outputdir": ""
    "templatedir" : ""
    "yamldir": ""
+   "createNFs" : {}
+}
+```
+
+```
    "NFs" : [
    {
     "name": "AMF",
