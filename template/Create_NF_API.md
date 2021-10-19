@@ -11,6 +11,9 @@ createNF_GS.py : -o (output directory) -i (input directory) -t (template directo
       - {Model} 
       - {Common} 
       - {APIservices} - {apiservice}- {api, files}
-3. clean up {tmp} folder
-4. generate API coder per service at tmp folder
+2. clean up {tmp} folder
+3. generate API coder per service at tmp folder
   -  main.mustache : func main ==> func nicknameRouter 로 수정
+4. placement 
+5. repeat step 2-4 until allserviceapis create
+6. create main function based on configuration file 
