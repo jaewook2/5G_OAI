@@ -15,7 +15,7 @@ class AMF_configure():
       self.name = "AMF"
       self.services ={'namfCommunication': 'TS29518_Namf_Communication.yaml','namfEventExposure' :TS29518_Namf_EventExposure.yaml, 'namfLocation': TS29518_Namf_Location, 'namfMT':TS29518_Namf_MT} 
 
-'''
+```
 
 
 
