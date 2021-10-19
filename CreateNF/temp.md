@@ -1,35 +1,19 @@
 common configure file + NF configure file + 
+```python
+class configure():
+   def __init__(self):
+      self.outputdir = ""
+      self.yamldir = ""
+      self.templatedir = ""
+      self.createNFs =['AMF','SMF'] 
 ```
-{
-   "outputdir": ""
-   "templatedir" : ""
-   "yamldir": ""
-   "createNFs" : {}
-}
-```
-AMF.json
-```
-{
- "name": "AMF",
- "numServices" : 4,
- "Services" : [
-     { 
-         "ServiceName" : 
-         "TSnumber" : 
-     },
-     { 
-         "ServiceName" : 
-         "TSnumber" : 
-     },
-     { 
-         "ServiceName" : 
-         "TSnumber" : 
-     },
-     { 
-         "ServiceName" : 
-         "TSnumber" : 
-     }]
-}
+
+AMFConf.py
+```python
+class AMF_configure():
+   def __init__(self):
+      self.name = "AMF"
+      self.services ={'namfCommunication': 'TS29518_Namf_Communication.yaml','namfEventExposure' :TS29518_Namf_EventExposure.yaml, 'namfLocation': TS29518_Namf_Location, 'namfMT':TS29518_Namf_MT} 
 
 '''
 
