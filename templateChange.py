@@ -4,73 +4,83 @@ import shutil
 import os
 
 
-def modifiedMustache(origin_templatePath, NFname, serviceName):
+def modifiedMustache(templatePath, sFname, serviceName):
  
-    templatePath = copyMustache(origin_templatePath,NFname,serviceName)
+    templatePath = copyMustache(templatePath,sFname,serviceName)
  
     # looger.go
-    replaceWD(templatePath+"logger.mustache", "{{packageName}}", NFname+"common")   
+    replaceWD(templatePath+"logger.mustache", "{{packageName}}", sFname+"common")   
 
     # routers.go
-    replaceWD(templatePath+"routers.mustache", "{{packageName}}", NFname+"common")   
+    replaceWD(templatePath+"routers.mustache", "{{packageName}}", sFname+"common")   
 
     # error.go
-    replaceWD(templatePath+"error.mustache", "{{packageName}}", NFname+"common")   
+    replaceWD(templatePath+"error.mustache", "{{packageName}}", sFname+"common")   
 
     # helper.go
-    replaceWD(templatePath+"helpers.mustache", "{{packageName}}", NFname+"common")  
+    replaceWD(templatePath+"helpers.mustache", "{{packageName}}", sFname+"common")  
 
      # impl.go
-    replaceWD(templatePath+"impl.mustache", "{{packageName}}", NFname+"common")  
+    replaceWD(templatePath+"impl.mustache", "{{packageName}}", sFname+"common")  
 
     # api.go
-    replaceWD(templatePath+"api.mustache", "{{packageName}}", serviceName+"api")
-    replaceWD(templatePath+"api.mustache", "importModel", NFname+"model") 
-    replaceWD(templatePath+"api.mustache", "importCommon", NFname+"Common")    
-    replaceWD(templatePath+"api.mustache", "ImplResponse", NFname+"Common.ImplResponse")   
-    replaceWD(templatePath+"api.mustache", "{{dataType}}", NFname+"model.{{dataType}}") 
+    replaceWD(templatePath+"api.mustache", "{{packageName}}", serviceName)
+    replaceWD(templatePath+"api.mustache", "importModel", sFname+".com/"+sFname+"model") 
+    replaceWD(templatePath+"api.mustache", "importCommon", sFname+".com/"+sFname+"common")    
+    replaceWD(templatePath+"api.mustache", "ImplResponse", sFname+"common.ImplResponse")   
+    replaceWD(templatePath+"api.mustache", "{{dataType}}", sFname+"model.{{dataType}}") 
 
     # api_*.go (controller-api)
-    replaceWD(templatePath+"controller-api.mustache", "{{packageName}}", serviceName+"api")
-    replaceWD(templatePath+"controller-api.mustache", "importModel", NFname+"model") 
-    replaceWD(templatePath+"controller-api.mustache", "importCommon", NFname+"Common")    
-    replaceWD(templatePath+"controller-api.mustache", "Router {", NFname+"Common.Router {")
-    replaceWD(templatePath+"controller-api.mustache", "Routes{", NFname+"Common.Routes {")
-    replaceWD(templatePath+"controller-api.mustache", "Routes {", NFname+"Common.Routes {")
-    replaceWD(templatePath+"controller-api.mustache", "EncodeJSONResponse", NFname+"Common.EncodeJSONResponse")
-    replaceWD(templatePath+"controller-api.mustache", "ReadFormFile", NFname+"Common.ReadFormFile")
-    replaceWD(templatePath+"controller-api.mustache", "parseInt64Parameter", NFname+"Common.parseInt64Parameter")
-    replaceWD(templatePath+"controller-api.mustache", "parseInt32Parameter", NFname+"Common.parseInt32Parameter")
-    replaceWD(templatePath+"controller-api.mustache", "parseIntBoolParameter", NFname+"Common.parseBoolParameter")
-    replaceWD(templatePath+"controller-api.mustache", "parseInt64ArrayParameter", NFname+"Common.parseInt64ArrayParameter")
-    replaceWD(templatePath+"controller-api.mustache", "parseInt32ArrayParameter", NFname+"Common.parseInt32ArrayParameter")
-    replaceWD(templatePath+"controller-api.mustache", "{{dataType}}", NFname+"model.{{dataType}}") 
-    
+    replaceWD(templatePath+"controller-api.mustache", "{{packageName}}", serviceName)
+    replaceWD(templatePath+"controller-api.mustache", "importModel", sFname+".com/"+sFname+"model") 
+    replaceWD(templatePath+"controller-api.mustache", "importCommon", sFname+".com/"+sFname+"common")    
+    replaceWD(templatePath+"controller-api.mustache", "Router {", sFname+"common.Router {")
+    replaceWD(templatePath+"controller-api.mustache", "Routes {", sFname+"common.Routes {")
+    replaceWD(templatePath+"controller-api.mustache", "Routes{", sFname+"common.Routes {")
+    replaceWD(templatePath+"controller-api.mustache", "EncodeJSONResponse", sFname+"common.EncodeJSONResponse")
+    replaceWD(templatePath+"controller-api.mustache", "ReadFormFile", sFname+"common.ReadFormFile")
+    replaceWD(templatePath+"controller-api.mustache", "parseInt64Parameter", sFname+"common.parseInt64Parameter")
+    replaceWD(templatePath+"controller-api.mustache", "parseInt32Parameter", sFname+"common.parseInt32Parameter")
+    replaceWD(templatePath+"controller-api.mustache", "parseIntBoolParameter", sFname+"common.parseBoolParameter")
+    replaceWD(templatePath+"controller-api.mustache", "parseInt64ArrayParameter", sFname+"common.parseInt64ArrayParameter")
+    replaceWD(templatePath+"controller-api.mustache", "parseInt32ArrayParameter", sFname+"common.parseInt32ArrayParameter")
+    replaceWD(templatePath+"controller-api.mustache", "{{dataType}}", sFname+"model.{{dataType}}")     
+    replaceWD(templatePath+"controller-api.mustache", " ErrorHandler", " "+sFname+"common.ErrorHandler")        
+    replaceWD(templatePath+"controller-api.mustache", " DefaultErrorHandler", " "+sFname+"common.DefaultErrorHandler")
+    replaceWD(templatePath+"controller-api.mustache", "Assert", " "+sFname+"model.Assert")
+    replaceWD(templatePath+"controller-api.mustache", "ParsingError", " "+sFname+"common.ParsingError")
+
     # api_*_service.go
-    replaceWD(templatePath+"service.mustache", "{{packageName}}", serviceName+"api")
-    replaceWD(templatePath+"service.mustache", "importModel", NFname+"model")   
-    replaceWD(templatePath+"service.mustache", "{{dataType}}", NFname+"model.{{dataType}}") 
+    replaceWD(templatePath+"service.mustache", "{{packageName}}", serviceName)
+    replaceWD(templatePath+"service.mustache", "importModel", sFname+".com/"+sFname+"model")   
+    replaceWD(templatePath+"service.mustache", "importCommon", sFname+".com/"+sFname+"common")   
+    replaceWD(templatePath+"service.mustache", "{{dataType}}", sFname+"model.{{dataType}}") 
+    replaceWD(templatePath+"service.mustache", "Response", sFname+"common.Response")
+    replaceWD(templatePath+"service.mustache", "ImplResponse", sFname+"common.ImplResponse")   
+    replaceWD(templatePath+"service.mustache", "Impl"+sFname+"common.Response", sFname+"common.ImplResponse")   
 
     # main.go
-    replaceWD(templatePath+"main.mustache", "{{packageName}}", serviceName+"api")
-    replaceWD(templatePath+"main.mustache", "main", serviceName+"Router")
+    replaceWD(templatePath+"main.mustache", "openapi", serviceName)
+    replaceWD(templatePath+"main.mustache", "importCommon", sFname+".com/"+sFname+"common")    
+    replaceWD(templatePath+"main.mustache", "main", "Router"+serviceName)
+    replaceWD(templatePath+"main.mustache", "AddRouter", sFname+"common.AddRouter")
 
     # model.go
-    replaceWD(templatePath+"model.mustache", "{{packageName}}", NFname+"model")
-    replaceWD(templatePath+"model.mustache", "importCommon", NFname+"common")  
-    replaceWD(templatePath+"model.mustache", "IsZeroValue(el)", NFname+"common.IsZeroValue(el)")
-    replaceWD(templatePath+"model.mustache", "RequiredError{", NFname+"common.RequiredError{")
-    replaceWD(templatePath+"model.mustache", "AssertRecurseInterfaceRequired", NFname+"common.AssertRecurseInterfaceRequired")
-    replaceWD(templatePath+"model.mustache", "ErrTypeAssertionError", NFname+"common.ErrTypeAssertionError")
+    replaceWD(templatePath+"model.mustache", "{{packageName}}", sFname+"model")
+    replaceWD(templatePath+"model.mustache", "importCommon", sFname+".com/"+sFname+"common")  
+    replaceWD(templatePath+"model.mustache", "IsZeroValue(el)", sFname+"common.IsZeroValue(el)")
+    replaceWD(templatePath+"model.mustache", "RequiredError{", sFname+"common.RequiredError{")
+    replaceWD(templatePath+"model.mustache", "AssertRecurseInterfaceRequired", sFname+"common.AssertRecurseInterfaceRequired")
+    replaceWD(templatePath+"model.mustache", "ErrTypeAssertionError", sFname+"common.ErrTypeAssertionError")
     
     return templatePath
     
-def copyMustache(temPath, NFname,serviceName):
+def copyMustache(templatePath, sFname,serviceName):
 # orgin copy
-    targetPath = temPath+NFname+"/"+serviceName
+    targetPath = templatePath+sFname+"/"+serviceName
     if os.path.isdir(targetPath):
         shutil.rmtree(targetPath)
-    originPath = temPath+"origin"    
+    originPath = templatePath+"origin"    
     shutil.copytree(originPath, targetPath)
     
     return targetPath+"/"

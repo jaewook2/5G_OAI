@@ -1,0 +1,17 @@
+{{>partial_header}}
+package amflocation
+
+import (
+	"amf.com/amfcommon"
+	"github.com/gorilla/mux"	
+)
+
+func Routeramflocation(router *mux.Router) *mux.Router {
+{{#apiInfo}}{{#apis}}
+	{{classname}}Service := New{{classname}}Service()
+	{{classname}}Controller := New{{classname}}Controller({{classname}}Service)
+{{/apis}}{{/apiInfo}}
+	router = amfcommon.AddRouter(router, {{#apiInfo}}{{#apis}}{{classname}}Controller{{^-last}}, {{/-last}}{{/apis}}{{/apiInfo}})
+
+	return router
+}

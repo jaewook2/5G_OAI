@@ -2,40 +2,53 @@ import os
 import configure
 import shutil
 import templateChange as tc
-## To Do: orginize functions 
-    
-def placementFiles(tempPath, serviceName, savedir):
-    file_list1 = os.listdir(tempPath)
-    for fileName in file_list1:
-        if fileName == 'main.go':
-            savepath = savedir+serviceName+"/"
-            shutil.move(tempPath+fileName, savepath+fileName)
-            os.rename(savepath+fileName, savepath+serviceName+"Router.go")
+import postconfigure as pc
 
-    file_list = os.listdir(tempPath+"go")
+## To Do: orginize functions 
+# Path listup
+# *basicPath ==> (Yaml, Template, NFs) 
+# **NFs ==> (amf, smf,...)
+# ***NF ==> NFname+"temp", NFname+"model", NFname+serviceName+"api", NFname+"common", 
+
+# ** Yaml ==> (origin, amf, smf, ...)   
+
+def placementFiles(tempPath, saveDir, sfName, serviceName):
+# tempPath = BacsicPath + "NFs/" + sfName + "/"+sfName+"temp/"
+# saveDir = BacsicPath + "NFs/" + sfName + "/"
+# savePath = Dynmaic Path
+
+# Deploy serviceName+"Router.go" and go.mod
+    file_list = os.listdir(tempPath)
+    for fileName in file_list:
+        if fileName == 'main.go':
+            savePath = saveDir+serviceName+"/"
+            shutil.move(tempPath+fileName, savePath+serviceName+"Router.go")
+    	
+# Deploy other files
+    tempPath = tempPath+"go/"
+    file_list = os.listdir(tempPath)
     for fileName in file_list:
         if 'model_' in fileName:
-            savepath =savedir+"model/"
+            endName = sfName+"model/"
         elif 'api_' in fileName or  fileName  in ['api.go']: 
-            savepath = savedir+serviceName+"/"
+            endName = serviceName+"/"
         elif fileName in ['routers.go', 'helpers.go', 'error.go', 'impl.go', 'logger.go']: 
-            savepath = savedir+"common/"
+            endName = sfName+"common/"
         else:
             continue
 
         # Placement
-        file_list_savedir = os.listdir(savepath)
+        file_list_savedir = os.listdir(saveDir+endName)
         if fileName not in file_list_savedir:
-            shutil.move(tempPath+"go/"+fileName, savepath+fileName)
+            shutil.move(tempPath+fileName, saveDir+endName+fileName)
  
- 
-    file_list = os.listdir(tempPath+"api/")
-    for fileName in file_list:
-        print(fileName)
-        if fileName not in os.listdir(savedir+serviceName+"/api/"):
-            shutil.move(tempPath+"api/"+fileName, savedir+serviceName+"/api/"+ fileName)
+# Deploy api file (Optional? Not necessary?) 
+ #   file_list = os.listdir(tempPath+"api/")
+ #   for fileName in file_list:
+ #       if fileName not in os.listdir(saveDir+serviceName+"/api/"):
+ #           shutil.move(tempPath+"api/"+fileName, saveDir+serviceName+"/api/"+ fileName)
 
-def placementMain(filePath, targetPath, nfName, services):
+def placementMain(filePath, targetPath, sF):
     
     shutil.copyfile(filePath+"main.go", targetPath+"main.go")
     # add function 
@@ -45,54 +58,61 @@ def placementMain(filePath, targetPath, nfName, services):
 
 # Basic parametr setting
 conf = configure.configure()
-basicPath = conf.outputdir
-yamldir = conf.yamldir
-templatedir = conf.templatedir
-createNFs = conf.createNFs
+basicPath = conf.basicDir #
+yamlPath = conf.yamldir
+templateDir = conf.templatedir
+createSFs = conf.createSFs
 
 # Create Directory 
- 
-for NF in createNFs:
-    nfName = NF.name
-    file_list = os.listdir(basicPath)
-    if nfName in file_list:
-    	shutil.rmtree(basicPath+nfName)
-    os.mkdir(basicPath+nfName) # create NFname folder
-    os.mkdir(basicPath+nfName+"/go") 
-    os.mkdir(basicPath+nfName+"/go/model")
-    os.mkdir(basicPath+nfName+"/go/common")
-    os.mkdir(basicPath+nfName+"/go/temp")
+sFBasicPath = basicPath+"NFs/"
+if os.path.isdir(basicPath+"NFs/"):
+	pass
+else:
+    os.mkdir(basicPath+"NFs/") 
+
+for sF in createSFs:    
+    sFName = sF.name
+    file_list = os.listdir(sFBasicPath)
+    if len(file_list) > 0:
+        if sFName in file_list:
+            shutil.rmtree(sFBasicPath+sFName)
+    os.mkdir(sFBasicPath+sFName) # create NFname folder
+    os.mkdir(sFBasicPath+sFName+"/"+sFName+"model")
+    os.mkdir(sFBasicPath+sFName+"/"+sFName+"common")
+    os.mkdir(sFBasicPath+sFName+"/"+sFName+"temp")
 
 
-    for serviceName in NF.services.keys():
-        os.mkdir(basicPath+nfName+"/go/"+serviceName)
-        os.mkdir(basicPath+nfName+"/go/"+serviceName+"/api")
-        
-        
-        
+    for serviceName in sF.services.keys():
+        os.mkdir(sFBasicPath+sFName+"/"+serviceName)
+        os.mkdir(sFBasicPath+sFName+"/"+serviceName+"/api")
+               
 # create serviceAPI
-for NF in createNFs:
-    nfName = NF.name ##nf name
-    outputdir = basicPath+nfName+"/go/temp/"
+for sF in createSFs:
+    sFName = sF.name 
+    sFOutputPath = sFBasicPath+sFName+"/"+sFName+"temp/"
     
     # cleanUp temppath
-    file_list = os.listdir(basicPath+nfName+"/go")
-    if "temp" in file_list:
-    	shutil.rmtree(outputdir)
-    os.mkdir(outputdir)
+    if sFName+"temp" in os.listdir(sFBasicPath+sFName+"/"):
+    	shutil.rmtree(sFOutputPath)
+    os.mkdir(sFOutputPath)
     
     
-    for serviceName in NF.services.keys():
+    for serviceName in sF.services.keys():
         # Modify template file
-        templatePath = tc.modifiedMustache(templatedir,nfName,serviceName)
+        templatePath = tc.modifiedMustache(templateDir,sFName,serviceName)
         # 
-        yamlfile = NF.services[serviceName] # yamlfile name
+        yamlfile = sF.services[serviceName] # yamlfile name
         ### openapi generator
-        osParam = conf.os + " -i " + yamldir+yamlfile + " -o " + outputdir + " -t " + templatePath
+        osParam = conf.os + " -i " + yamlPath+yamlfile + " -o " + sFOutputPath + " -t " + templatePath
         os.system(osParam)                
-        savedir = basicPath+nfName+"/go/"
-        placementFiles(outputdir, serviceName, savedir)
-        shutil.rmtree(outputdir)
+        saveDir = sFBasicPath+sFName+"/"
+        placementFiles(sFOutputPath, saveDir, sFName, serviceName)
+        shutil.rmtree(sFOutputPath)
         
-
+    placementMain(basicPath, sFBasicPath+sFName+"/",sF)
+    workPath = sFBasicPath + sF.name +"/"
+    pc.postconfigure_ (workPath, sF)
+    pc.createModFile (sFBasicPath+sFName+"/", sF)
+        
+   # run and modfiy	
 
