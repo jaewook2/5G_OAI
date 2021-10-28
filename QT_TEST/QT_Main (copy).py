@@ -3,7 +3,7 @@ import configure
 import shutil
 import templateChange as tc
 import postconfigure as pc
-import temp_config.py as tempc
+import temp_config as tempc
 
 ## To Do: orginize functions 
 # Path listup
