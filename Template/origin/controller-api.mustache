@@ -2,8 +2,6 @@
 package {{packageName}}
 
 import (
-	"importModel"
-	"importCommon"
 	"encoding/json"
 	"net/http"
 	"strings"
@@ -168,7 +166,7 @@ func (c *{{classname}}Controller) {{nickname}}(w http.ResponseWriter, r *http.Re
 	{{/isInteger}}
 	{{^isFile}}
 	{{^isLong}}
-	{{paramName}}Param := {{dataType}}{}
+	{{paramName}}Param := r.FormValue("{{baseName}}")
 	{{/isLong}}
 	{{/isFile}}
 	{{/isFormParam}}

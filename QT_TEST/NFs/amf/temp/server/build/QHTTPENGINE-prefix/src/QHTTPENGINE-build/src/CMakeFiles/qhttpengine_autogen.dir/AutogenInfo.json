@@ -1,0 +1,250 @@
+{
+	"BUILD_DIR" : "/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE-build/src/qhttpengine_autogen",
+	"CMAKE_BINARY_DIR" : "/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE-build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE-build/src",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE",
+	"HEADERS" : 
+	[
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE-build/src/qhttpengine_export.h",
+			"Mu",
+			"EJRQKI7XPS/moc_qhttpengine_export.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/basicauthmiddleware.h",
+			"Mu",
+			"JIRO4TO6HL/moc_basicauthmiddleware.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/filesystemhandler.h",
+			"Mu",
+			"JIRO4TO6HL/moc_filesystemhandler.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/handler.h",
+			"Mu",
+			"JIRO4TO6HL/moc_handler.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/ibytearray.h",
+			"Mu",
+			"JIRO4TO6HL/moc_ibytearray.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/localauthmiddleware.h",
+			"Mu",
+			"JIRO4TO6HL/moc_localauthmiddleware.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/localfile.h",
+			"Mu",
+			"JIRO4TO6HL/moc_localfile.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/middleware.h",
+			"Mu",
+			"JIRO4TO6HL/moc_middleware.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/parser.h",
+			"Mu",
+			"JIRO4TO6HL/moc_parser.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/proxyhandler.h",
+			"Mu",
+			"JIRO4TO6HL/moc_proxyhandler.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/qiodevicecopier.h",
+			"Mu",
+			"JIRO4TO6HL/moc_qiodevicecopier.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/qobjecthandler.h",
+			"Mu",
+			"JIRO4TO6HL/moc_qobjecthandler.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/range.h",
+			"Mu",
+			"JIRO4TO6HL/moc_range.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/server.h",
+			"Mu",
+			"JIRO4TO6HL/moc_server.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include/qhttpengine/socket.h",
+			"Mu",
+			"JIRO4TO6HL/moc_socket.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/basicauthmiddleware_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_basicauthmiddleware_p.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/filesystemhandler_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_filesystemhandler_p.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/handler_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_handler_p.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/localauthmiddleware_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_localauthmiddleware_p.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/localfile_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_localfile_p.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/proxyhandler_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_proxyhandler_p.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/proxysocket.h",
+			"Mu",
+			"UVLADIE3JM/moc_proxysocket.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/qiodevicecopier_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_qiodevicecopier_p.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/qobjecthandler_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_qobjecthandler_p.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/range_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_range_p.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/server_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_server_p.cpp"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/socket_p.h",
+			"Mu",
+			"UVLADIE3JM/moc_socket_p.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE-build/src/qhttpengine_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE-build/src/qhttpengine_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QHTTPENGINE_LIBRARY", "QT_CORE_LIB", "QT_NETWORK_LIB", "QT_NO_DEBUG" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/include",
+		"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE-build/src",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/c++/9",
+		"/usr/include/x86_64-linux-gnu/c++/9",
+		"/usr/include/c++/9/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE-build/src/qhttpengine_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 1,
+	"PARSE_CACHE_FILE" : "/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE-build/src/CMakeFiles/qhttpengine_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE-build/src/CMakeFiles/qhttpengine_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/basicauthmiddleware.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/filesystemhandler.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/handler.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/localauthmiddleware.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/localfile.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/parser.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/proxyhandler.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/proxysocket.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/qiodevicecopier.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/qobjecthandler.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/range.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/server.cpp",
+			"Mu"
+		],
+		[
+			"/home/etri/5G_OAI/QT_TEST/NFs/amf/temp/server/build/QHTTPENGINE-prefix/src/QHTTPENGINE/src/src/socket.cpp",
+			"Mu"
+		]
+	],
+	"VERBOSITY" : 0
+}

@@ -2,8 +2,6 @@
 package {{packageName}}
 
 import (
-	"importModel"
-	"importCommon"
 	"context"
 	"net/http"{{#apiInfo}}{{#apis}}{{#imports}}
 	"{{import}}"{{/imports}}{{/apis}}{{/apiInfo}}

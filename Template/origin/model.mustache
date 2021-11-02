@@ -1,11 +1,8 @@
 {{>partial_header}}
 package {{packageName}}
 import (
-	"importCommon"
-)
 {{#models}}{{#imports}}
 {{#-first}}import (
-
 {{/-first}}	"{{import}}"{{#-last}}
 )
 {{/-last}}{{/imports}}{{#model}}{{#isEnum}}{{#description}}// {{{classname}}} : {{{description}}}{{/description}}

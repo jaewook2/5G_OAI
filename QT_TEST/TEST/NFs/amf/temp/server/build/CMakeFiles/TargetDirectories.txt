@@ -1,0 +1,15 @@
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/CMakeFiles/install/strip.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/CMakeFiles/install.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/CMakeFiles/list_install_components.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/CMakeFiles/rebuild_cache.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/CMakeFiles/edit_cache.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/CMakeFiles/install/local.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/CMakeFiles/QHTTPENGINE.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/src/CMakeFiles/install/local.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/src/CMakeFiles/install.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/src/CMakeFiles/list_install_components.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/src/CMakeFiles/rebuild_cache.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/src/CMakeFiles/edit_cache.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/src/CMakeFiles/install/strip.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/src/CMakeFiles/cpp-qt-qhttpengine-server.dir
+/home/etri/5G_OAI/QT_TEST/TEST/NFs/amf/temp/server/build/src/CMakeFiles/cpp-qt-qhttpengine-server_autogen.dir

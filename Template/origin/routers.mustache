@@ -86,8 +86,6 @@ func NewRouter(routers ...Router) {{#routers}}{{#mux}}*mux.Router{{/mux}}{{#chi}
 	return router
 }
 
-
-// NewRouter creates a new router for any number of api routers
 func AddRouter(router *mux.Router, routers ...Router) {{#routers}}{{#mux}}*mux.Router{{/mux}}{{#chi}}chi.Router{{/chi}}{{/routers}} {
 	for _, api := range routers {
 		for _, route := range api.Routes() {
@@ -115,6 +113,7 @@ func AddRouter(router *mux.Router, routers ...Router) {{#routers}}{{#mux}}*mux.R
 
 	return router
 }
+
 
 
 // EncodeJSONResponse uses the json encoder to write an interface to the http response with an optional status code
