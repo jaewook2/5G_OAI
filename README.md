@@ -1,5 +1,10 @@
 # 5G_OAI
 ## go-server auto
+1109
+- [ ] Jsondata 해결
+- [ ] query.Get 파트 해결 할 것.
+- [ ] Unknowntype 해결 필요
+- [ ] golang <==> c언어 간의 해결방안 고려.
 - 미비한부분
   - [ ]: python을 통해 문자열을 중간에 넣는 기능 필요
   - [ ]: 탬플릿 코드 수정시 어떤 부분이 어떻게 수정되는지 기입필요 ==> 
