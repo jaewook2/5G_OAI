@@ -43,11 +43,7 @@ def placementFiles(tempPath, saveDir, sfName, serviceName):
         if fileName not in file_list_savedir:
             shutil.move(tempPath+fileName, saveDir+endName+fileName)
  
-# Deploy api file (Optional? Not necessary?) 
- #   file_list = os.listdir(tempPath+"api/")
- #   for fileName in file_list:
- #       if fileName not in os.listdir(saveDir+serviceName+"/api/"):
- #           shutil.move(tempPath+"api/"+fileName, saveDir+serviceName+"/api/"+ fileName)
+
 
 def placementMain(filePath, targetPath, sF):
     
@@ -104,7 +100,7 @@ for sF in createSFs:
         # 
         yamlfile = sF.services[serviceName] # yamlfile name
         ### openapi generator
-        osParam = conf.os + " -i " + yamlPath+yamlfile + " -o " + sFOutputPath + " -t " + templatePath
+        osParam = conf.os + " -i " + yamlPath+yamlfile + " -o " + sFOutputPath + " -t " + templatePath #+ "--additional-properties=uesOneOfDiscriminatorLookup=true"
         os.system(osParam)                
         saveDir = sFBasicPath+sFName+"/"
         placementFiles(sFOutputPath, saveDir, sFName, serviceName)

@@ -1,13 +1,12 @@
 package main
 
 import (
-	"log"
-	"net/http"
-
 	amfcommunication "amf.com/amfcommunication"
 	amfeventexposure "amf.com/amfeventexposure"
 	amflocation "amf.com/amflocation"
 	amfmt "amf.com/amfmt"
+	"log"
+	"net/http"
 
 	"github.com/gorilla/mux"
 )

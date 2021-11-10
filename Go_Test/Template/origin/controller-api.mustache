@@ -166,7 +166,7 @@ func (c *{{classname}}Controller) {{nickname}}(w http.ResponseWriter, r *http.Re
 	{{/isInteger}}
 	{{^isFile}}
 	{{^isLong}}
-	{{paramName}}Param := {{dataType}}{}
+	{{paramName}}Param := r.FromValue("{{baseName}}")
 	{{/isLong}}
 	{{/isFile}}
 	{{/isFormParam}}

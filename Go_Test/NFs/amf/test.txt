@@ -1,0 +1,35 @@
+Script started on 2021-11-10 20:11:51+09:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="123" LINES="23"]
+]0;etri@etri-VirtualBox: ~/5G_OAI/Go_Test/NFs/amf[01;32metri@etri-VirtualBox[00m:[01;34m~/5G_OAI/Go_Test/NFs/amf[00m$ stript donego run main.go nghttpd --no-tls v 8080[8Pgo run main.go 
+# amf.com/amfcommunication
+amfcommunication/amfcommunicationRouter.go:15:2: imported and not used: "log"
+amfcommunication/amfcommunicationRouter.go:16:2: imported and not used: "net/http"
+amfcommunication/api_n1_n2_individual_subscription_document.go:14:1: imported and not used: "amf.com/amfmodel"
+amfcommunication/api_n1_n2_individual_subscription_document.go:15:2: imported and not used: "encoding/json"
+amfcommunication/api_n1_n2_individual_subscription_document_service.go:14:1: imported and not used: "amf.com/amfmodel"
+amfcommunication/api_non_uen2_message_notification_individual_subscription_document.go:14:1: imported and not used: "amf.com/amfmodel"
+amfcommunication/api_non_uen2_message_notification_individual_subscription_document.go:15:2: imported and not used: "encoding/json"
+amfcommunication/api_non_uen2_message_notification_individual_subscription_document_service.go:14:1: imported and not used: "amf.com/amfmodel"
+amfcommunication/api_non_uen2_messages_collection_document.go:19:2: imported and not used: "github.com/gorilla/mux"
+amfcommunication/api_non_uen2_messages_subscriptions_collection_document.go:19:2: imported and not used: "github.com/gorilla/mux"
+amfcommunication/api_non_uen2_messages_subscriptions_collection_document.go:19:2: too many errors
+# amf.com/amfeventexposure
+amfeventexposure/amfeventexposureRouter.go:15:2: imported and not used: "log"
+amfeventexposure/amfeventexposureRouter.go:16:2: imported and not used: "net/http"
+amfeventexposure/api.go:42:46: undefined: amfmodel.UNKNOWN_BASE_TYPE
+amfeventexposure/api_individual_subscription_document.go:91:26: undefined: amfmodel.UNKNOWN_BASE_TYPE
+amfeventexposure/api_individual_subscription_document_service.go:76:131: undefined: amfmodel.UNKNOWN_BASE_TYPE
+amfeventexposure/api_subscriptions_collection_document.go:19:2: imported and not used: "github.com/gorilla/mux"
+# amf.com/amflocation
+amflocation/amflocationRouter.go:15:2: imported and not used: "log"
+amflocation/amflocationRouter.go:16:2: imported and not used: "net/http"
+# amf.com/amfmt
+amfmt/amfmtRouter.go:15:2: imported and not used: "log"
+amfmt/amfmtRouter.go:16:2: imported and not used: "net/http"
+amfmt/api_ue_context_document.go:14:1: imported and not used: "amf.com/amfmodel"
+amfmt/api_ue_context_document.go:15:2: imported and not used: "encoding/json"
+amfmt/api_ue_context_document.go:73:63: cannot use infoClassParam (type string) as type amfmodel.UeContextInfoClass in argument to c.service.ProvideDomainSelectionInfo
+amfmt/api_ue_context_document.go:73:63: cannot use oldGuamiParam (type string) as type amfmodel.Guami in argument to c.service.ProvideDomainSelectionInfo
+]0;etri@etri-VirtualBox: ~/5G_OAI/Go_Test/NFs/amf[01;32metri@etri-VirtualBox[00m:[01;34m~/5G_OAI/Go_Test/NFs/amf[00m$ go run main.go [4Pstript donego run main.go [Kexit
+exit
+
+Script done on 2021-11-10 20:11:58+09:00 [COMMAND_EXIT_CODE="2"]

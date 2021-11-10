@@ -8,6 +8,7 @@
  */
 
 package amfmodel
+
 import (
 "amf.com/amfcommon"
 )

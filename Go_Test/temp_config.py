@@ -13,9 +13,11 @@ def tempconfigure (workPath):
     replaceWD (dirPath+fileName, "a_5GsUserStateAnyOf", "a5GsUserStateAnyOf")
     replaceWD (dirPath+fileName, "t_5GsUserStateAnyOf", "t5GsUserStateAnyOf")   
 
-
-
-
+    dirPath = workPath+"amfcommunication/"
+    fileName = "api_individual_ue_context_document.go"
+    replaceWD (dirPath+fileName,"ueContextIdParam, jsonDataParam, binaryDataGtpcMessageParam,", "ueContextIdParam, UeContextRelocateDataParam, binaryDataGtpcMessageParam,")
+    replaceWD (dirPath+fileName,"ueContextIdParam, jsonDataParam, binaryDataGtpcMessageParam", "ueContextIdParam, UeContextCancelRelocateDataParam, binaryDataGtpcMessageParam")
+    replaceWD (dirPath+fileName,"ueContextIdParam, jsonDataParam, binaryDataN2InformationParam,", "ueContextIdParam, UeContextCreateDataParam, binaryDataN2InformationParam,")
 
 
 

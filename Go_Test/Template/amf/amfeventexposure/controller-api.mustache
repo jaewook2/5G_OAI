@@ -168,7 +168,17 @@ func (c *{{classname}}Controller) {{nickname}}(w http.ResponseWriter, r *http.Re
 	{{/isInteger}}
 	{{^isFile}}
 	{{^isLong}}
-	{{paramName}}Param := amfmodel.{{dataType}}{}
+	{{baseType}}Param := amfmodel.{{baseType}}{}
+	d := json.NewDecoder(r.Body)
+	d.DisallowUnknownFields()
+	if err := d.Decode(&{{baseType}}Param); err != nil { 
+		 c.errorHandler(w, r,&amfcommon.ParsingError{Err: err}, nil)
+		 return 
+	}
+		if err := amfmodel.Assert{{baseType}}Required({{baseType}}Param); err != nil {
+		c.errorHandler(w, r, err, nil) 
+		return 
+	}
 	{{/isLong}}
 	{{/isFile}}
 	{{/isFormParam}}

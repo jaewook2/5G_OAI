@@ -51,6 +51,14 @@ def modifiedMustache(templatePath, sFname, serviceName):
     replaceWD(templatePath+"controller-api.mustache", " DefaultErrorHandler", " "+sFname+"common.DefaultErrorHandler")
     replaceWD(templatePath+"controller-api.mustache", "Assert", " "+sFname+"model.Assert")
     replaceWD(templatePath+"controller-api.mustache", "ParsingError", " "+sFname+"common.ParsingError")
+    replaceWD(templatePath+"controller-api.mustache", '{{paramName}}Param := r.FromValue("{{baseName}}")', '{{baseType}}Param := '+ sFname+"model.{{baseType}}{}\n"
++ "\td := json.NewDecoder(r.Body)\n\t"
++ "d.DisallowUnknownFields()\n" 
++ "\tif err := d.Decode(&{{baseType}}Param); err != nil { \n"
++ "\t\t c.errorHandler(w, r,&"+ sFname+"common.ParsingError{Err: err}, nil)"
++ "\n\t\t return \n\t}\n"
++ "\t\tif err := "+ sFname+"model.Assert{{baseType}}Required({{baseType}}Param); err != nil {\n\t\t"
++ "c.errorHandler(w, r, err, nil) \n\t\treturn \n\t}")
 
     # api_*_service.go
     replaceWD(templatePath+"service.mustache", "{{packageName}}", serviceName)
@@ -73,7 +81,9 @@ def modifiedMustache(templatePath, sFname, serviceName):
 
     # model.go
     replaceWD(templatePath+"model.mustache", "{{packageName}}", sFname+"model")
-    replaceWD(templatePath+"model.mustache", "import (", "import (\n"+'"'+sFname+".com/"+sFname+'common"')  
+    replaceWD(templatePath+"model.mustache", "{{#models}}", "\n{{#models}}import (\n"+'"'+sFname+".com/"+sFname+'common"\n')
+    replaceWD(templatePath+"model.mustache", "{{#-first}}import (", "{{#-first}}")
+    replaceWD(templatePath+"model.mustache", "){{/-last}}{{/imports}}", "{{/-last}}{{/imports}})\n")  
     replaceWD(templatePath+"model.mustache", "IsZeroValue(el)", sFname+"common.IsZeroValue(el)")
     replaceWD(templatePath+"model.mustache", "RequiredError{", sFname+"common.RequiredError{")
     replaceWD(templatePath+"model.mustache", "AssertRecurseInterfaceRequired", sFname+"common.AssertRecurseInterfaceRequired")
